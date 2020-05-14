@@ -79,7 +79,11 @@ const Tab: React.FC<ITabProps> = ({ children, tabName }) => {
 
 const Panel: React.FC<IPanelProps> = ({ children, tabName }) => {
   const { activeTab } = React.useContext(TabsContext);
-  return <PanelContainer>{activeTab === tabName && children}</PanelContainer>;
+  return (
+    <PanelContainer isActive={activeTab === tabName}>
+      {activeTab === tabName && children}
+    </PanelContainer>
+  );
 };
 
 Tabs.Tab = Tab;

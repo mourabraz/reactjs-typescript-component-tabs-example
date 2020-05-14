@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { shade } from "polished";
 
-interface IButtonTab {
+interface IAtiveTab {
   isActive: boolean;
 }
 
@@ -21,9 +21,25 @@ export const PanelsContainer = styled.div`
   padding: 16px;
 `;
 
-export const PanelContainer = styled.div``;
+export const PanelContainer = styled.div<IAtiveTab>`
+  transition: margin 0.3s ease-out, opacity 0.3s ease-out;
 
-export const ButtonTab = styled.button<IButtonTab>`
+  ${(props) =>
+    !props.isActive &&
+    css`
+      margin: 0 0 0 -700px;
+      opacity: 0;
+    `}
+
+  ${(props) =>
+    props.isActive &&
+    css`
+      margin: 0 0 0 0;
+      opacity: 1;
+    `}
+`;
+
+export const ButtonTab = styled.button<IAtiveTab>`
   background: transparent;
   height: 56px;
   border-radius: 16px 16px 0 0;
