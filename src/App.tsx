@@ -39,7 +39,25 @@ function App() {
             <div>
               <h2>Tab3</h2>
 
-              <p>Teste de tab 3</p>
+              <Tabs defaultTabName="subtab1">
+                <Tabs.Tab tabName="subtab1">SubTab 1</Tabs.Tab>
+                <Tabs.Tab tabName="subtab2">SubTab 2</Tabs.Tab>
+
+                <Tabs.Panel tabName="subtab1">
+                  <div>
+                    <h2>SubTab1</h2>
+
+                    <p>Teste de subtab 1</p>
+                  </div>
+                </Tabs.Panel>
+                <Tabs.Panel tabName="subtab2">
+                  <div>
+                    <h2>SubTab2</h2>
+
+                    <p>Teste de subtab 2</p>
+                  </div>
+                </Tabs.Panel>
+              </Tabs>
             </div>
           </Tabs.Panel>
         </Tabs>
