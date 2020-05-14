@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback } from "react";
 
 import {
   TabsContainer,
@@ -7,7 +7,7 @@ import {
   PanelsContainer,
   PanelContainer,
   ButtonTab,
-} from './styles';
+} from "./styles";
 
 interface ITabs {
   Tab: React.FC<ITabProps>;
@@ -43,7 +43,7 @@ const Tabs: React.FC<ITabsProps> & ITabs = ({ children, defaultTabName }) => {
           {React.Children.map(
             children,
             (child) =>
-              React.isValidElement(child) && child.type === Tab && child,
+              React.isValidElement(child) && child.type === Tab && child
           )}
         </TabContainer>
 
@@ -51,8 +51,7 @@ const Tabs: React.FC<ITabsProps> & ITabs = ({ children, defaultTabName }) => {
           {React.Children.map(
             children,
             (child) =>
-              React.isValidElement(child) &&
-              child.type === Panel && <div>{child}</div>,
+              React.isValidElement(child) && child.type === Panel && child
           )}
         </PanelsContainer>
       </TabsContainer>
